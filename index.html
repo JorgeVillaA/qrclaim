@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover on every page: the safe-area env() padding in
+         style.css is inert without it, and the pages must agree so standalone
+         (installed) mode doesn't jump between letterboxed and edge-to-edge. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title data-i18n="home.title">QR Claim — transferir archivos con luz</title>
+    <meta
+      name="description"
+      data-i18n-attr="content:home.metaDescription"
+      content="Envíe un archivo o texto entre dos dispositivos con nada más que una pantalla y una cámara. Códigos QR animados con codificación fountain, sin ruta de red de por medio."
+    />
+    <meta name="theme-color" content="#070a11" />
+
+    <!-- Absolute URLs: scrapers are inconsistent about resolving relative ones.
+         Set VITE_SITE_URL at build time when deploying elsewhere. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QR Claim" />
+    <meta property="og:title" data-i18n-attr="content:home.title" content="QR Claim — transferir archivos con luz" />
+    <meta
+      property="og:description"
+      data-i18n-attr="content:home.ogDescription"
+      content="Códigos QR animados con codificación fountain, de pantalla a cámara. Sin cuenta, sin emparejamiento, sin ruta de red entre los dos dispositivos. %TOP_SPEED% sostenidos, medidos con pruebas verificables."
+    />
+    <meta property="og:url" content="%SITE_URL%" />
+    <meta property="og:image" content="%OG_IMAGE%" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      data-i18n-attr="content:home.ogImageAlt"
+      content="Un teléfono en plena transferencia, leyendo una secuencia animada de códigos QR desde otra pantalla."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="%SITE_URL%" />
+    <link rel="icon" href="./qrclaim_logo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="stylesheet" href="./shared/style.css" />
+  </head>
+  <body class="home-page">
+    <header class="site-header">
+      <a class="brand" href="./"><svg class="brand-logo" viewBox="0 0 543 554.1" fill="currentColor" aria-hidden="true"><g transform="translate(-241,789) scale(0.1,-0.1)"><path d="M2410 6513 l0 -1378 103 101 c540 531 1324 986 1984 1153 402 102 850 95 1268 -21 529 -146 1300 -581 1860 -1050 175 -146 212 -184 199 -205 -37 -63 -502 -432 -754 -600 -969 -644 -1785 -844 -2590 -634 -667 174 -1376 581 -1947 1118 l-123 115 0 -1382 0 -1381 1478 4 c1291 3 1491 5 1588 20 1345 194 2240 1124 2355 2446 17 195 7 620 -19 786 -192 1236 -1030 2069 -2262 2249 -217 32 -411 36 -1772 36 l-1368 0 0 -1377z"/><path d="M4945 5906 c-300 -68 -532 -287 -611 -577 -25 -89 -25 -289 0 -378 141 -513 724 -749 1179 -477 405 242 503 778 209 1148 -100 125 -258 229 -417 273 -82 22 -282 29 -360 11z"/></g></svg>QR Claim</a>
+      <!-- Same switcher as the tool pages, root-relative hrefs; neither link
+           is current here, so neither is highlighted. -->
+      <nav class="mode-nav" aria-label="Modo" data-i18n-attr="aria-label:chrome.navAriaLabel"><a href="./send/" data-i18n="chrome.navSend">Enviar</a><a href="./receive/" data-i18n="chrome.navReceive">Recibir</a></nav>
+    </header>
+    <main class="home-shell">
+      <noscript><p>QR Claim necesita JavaScript para funcionar. Actívelo para enviar o recibir archivos.</p></noscript>
+      <section class="hero">
+        <h1 data-i18n-html="home.heroTitleHtml">Transfiera archivos<br />con luz.</h1>
+        <p class="hero-copy" data-i18n="home.heroCopy">Envíe un archivo o un bloque de texto desde una pantalla a la cámara de otro dispositivo. Sin cuenta, sin emparejamiento, sin nube y sin ruta de red entre los dispositivos.</p>
+      </section>
+
+      <section class="transfer-grid" aria-label="Elija un lado" data-i18n-attr="aria-label:home.chooseSideAriaLabel">
+        <article class="transfer-card file-card">
+          <div>
+            <p class="card-kicker" data-i18n="home.cardSendKicker">Esta pantalla transmite</p>
+            <h2 data-i18n="home.cardSendTitle">Enviar un archivo o texto</h2>
+            <p data-i18n="home.cardSendBody">Cualquier archivo de hasta %MAX_FILE_LABEL%, o un fragmento de texto pegado de hasta %MAX_SNIPPET_LABEL%. Se comprime cuando conviene y se restaura con su nombre original.</p>
+          </div>
+          <div class="card-actions">
+            <a class="action" href="./send/"><span data-i18n="home.cardSendAction">Enviar</span> <svg class="action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15"/><path d="M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </article>
+
+        <article class="transfer-card note-feature-card">
+          <div>
+            <p class="card-kicker" data-i18n="home.cardReceiveKicker">Esta cámara recibe</p>
+            <h2 data-i18n="home.cardReceiveTitle">Apuntar y recibir</h2>
+            <p data-i18n="home.cardReceiveBody">Apunte la cámara a la pantalla del emisor para recibir el archivo.</p>
+          </div>
+          <div class="card-actions">
+            <a class="action" href="./receive/"><span data-i18n="home.cardReceiveAction">Recibir</span> <svg class="action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v15"/><path d="M5 12l7 7 7-7"/></svg></a>
+          </div>
+        </article>
+      </section>
+
+      <div class="home-share">
+        <button id="share-open" class="secondary-button share-site" type="button">
+          <svg class="share-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>
+          <span data-i18n="home.shareSite">Compartir QR Claim</span>
+        </button>
+      </div>
+
+      <div class="support-card">
+        <svg class="support-mug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2"/><path d="M8 2v3"/><path d="M12 2v3"/></svg>
+        <div>
+          <p class="support-title" data-i18n="home.supportTitle">Gratis, de código abierto, sin anuncios</p>
+          <p class="support-text" data-i18n-html="home.supportBodyHtml">Si QR Claim le facilitó el día.</p>
+        </div>
+      </div>
+
+      <dialog class="help-dialog share-dialog" id="share-dialog" aria-labelledby="share-title" data-share-title="QR Claim — transferir archivos con luz" data-i18n-attr="data-share-title:home.title">
+        <!-- Same markup as the sender's dialog, wired by shared/share-dialog.ts;
+             only the URL and copy differ. Focus lands on the title — see the
+             iOS note on the receiver's dialog. -->
+        <h2 id="share-title" tabindex="-1" autofocus data-i18n="home.shareDialogTitle">Compartir esta aplicación</h2>
+        <p class="share-hint" data-i18n="home.shareDialogHint">Escanee esto con la cámara de otro dispositivo, o envíele el enlace.</p>
+        <canvas id="share-qr" width="16" height="16"></canvas>
+        <div class="share-url-row">
+          <input id="share-url" readonly value="%SITE_URL%" aria-label="Enlace del sitio" data-i18n-attr="aria-label:home.siteLinkAriaLabel" />
+          <button id="share-copy" class="secondary-button" type="button" data-i18n="common.copy">Copiar</button>
+        </div>
+        <div class="note-actions">
+          <button id="share-native" class="secondary-button" type="button" hidden data-i18n="common.share">Compartir…</button>
+          <button id="share-close" class="secondary-button" type="button" data-i18n="common.close">Cerrar</button>
+        </div>
+      </dialog>
+
+      <p class="privacy-note" data-i18n="home.privacyNote">No se requiere una ruta de red entre los dispositivos. Los bytes viajan como luz. Los archivos no van cifrados, así que cualquier cámara apuntada a la pantalla emisora puede leer lo que muestra.</p>
+    </main>
+    <footer class="site-footer">
+      <span class="footer-id">
+        <span>QR Claim</span>
+      </span>
+    </footer>
+    <script type="module" src="./home/main.ts"></script>
+  </body>
+</html>
